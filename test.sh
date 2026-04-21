@@ -22,7 +22,7 @@ runTests() {
   cd $1
   if [ -f "pubspec.yaml" ] && [ -d "test" ]; then
     echo "running tests in $1"
-    flutter pub get
+    fvm flutter pub get
 
     escapedPath="$(echo $1 | sed 's/\//\\\//g')"
 
@@ -30,9 +30,9 @@ runTests() {
     if grep flutter pubspec.yaml >/dev/null; then
       echo "run flutter tests"
       if [ -f "test/all_tests.dart" ]; then
-        flutter test --coverage test/all_tests.dart || error=true
+        fvm flutter test --coverage test/all_tests.dart || error=true
       else
-        flutter test --coverage || error=true
+        fvm flutter test --coverage || error=true
       fi
 
       if [ -d "coverage" ]; then

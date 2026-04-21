@@ -4,6 +4,25 @@ Repository ini merupakan starter project submission kelas Flutter Expert Dicodin
 
 ---
 
+## Keamanan API Key
+
+API key TMDB tidak lagi disimpan di source code. Jalankan aplikasi dengan
+`dart-define`:
+
+```bash
+fvm flutter run --dart-define=TMDB_API_KEY=<YOUR_TMDB_API_KEY>
+```
+
+Untuk build Android:
+
+```bash
+fvm flutter build apk --dart-define=TMDB_API_KEY=<YOUR_TMDB_API_KEY>
+```
+
+Jika `TMDB_API_KEY` tidak diberikan, request ke API akan gagal dengan pesan konfigurasi.
+
+---
+
 ## Tips Submission Awal
 
 Pastikan untuk memeriksa kembali seluruh hasil testing pada submissionmu sebelum dikirimkan. Karena kriteria pada submission ini akan diperiksa setelah seluruh berkas testing berhasil dijalankan.
@@ -49,4 +68,3 @@ Jika kamu menerapkan modular pada project, Anda dapat memanfaatkan berkas `test.
     ```
     Proses ini akan men-*generate* berkas `lcov.info` dan folder `coverage` terkait dengan laporan coverage.
 4. Tunggu proses testing selesai hingga muncul web terkait laporan coverage.
-
