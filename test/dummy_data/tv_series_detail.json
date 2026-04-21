@@ -1,0 +1,31 @@
+{
+  "adult": false,
+  "backdrop_path": "/path.jpg",
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "id": 100,
+  "original_name": "Original TV Name",
+  "overview": "TV overview",
+  "poster_path": "/poster.jpg",
+  "first_air_date": "2024-01-01",
+  "name": "TV Name",
+  "vote_average": 8.1,
+  "vote_count": 120,
+  "number_of_episodes": 8,
+  "number_of_seasons": 1,
+  "seasons": [
+    {
+      "air_date": "2024-01-01",
+      "episode_count": 8,
+      "id": 101,
+      "name": "Season 1",
+      "overview": "Season overview",
+      "poster_path": "/season.jpg",
+      "season_number": 1
+    }
+  ]
+}

@@ -1,7 +1,11 @@
 import 'package:ditonton/data/models/movie_table.dart';
+import 'package:ditonton/data/models/tv_series_table.dart';
 import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/domain/entities/movie.dart';
 import 'package:ditonton/domain/entities/movie_detail.dart';
+import 'package:ditonton/domain/entities/season.dart';
+import 'package:ditonton/domain/entities/tv_series.dart';
+import 'package:ditonton/domain/entities/tv_series_detail.dart';
 
 final testMovie = Movie(
   adult: false,
@@ -56,4 +60,69 @@ final testMovieMap = {
   'overview': 'overview',
   'posterPath': 'posterPath',
   'title': 'title',
+};
+
+final testTvSeries = TvSeries(
+  adult: false,
+  backdropPath: '/path.jpg',
+  genreIds: [18],
+  id: 100,
+  originalName: 'Original TV Name',
+  overview: 'TV overview',
+  popularity: 55.1,
+  posterPath: '/poster.jpg',
+  firstAirDate: '2024-01-01',
+  name: 'TV Name',
+  voteAverage: 8.1,
+  voteCount: 120,
+);
+
+final testTvSeriesList = [testTvSeries];
+
+final testTvSeriesDetail = TvSeriesDetail(
+  adult: false,
+  backdropPath: '/path.jpg',
+  genres: [Genre(id: 1, name: 'Drama')],
+  id: 100,
+  originalName: 'Original TV Name',
+  overview: 'TV overview',
+  posterPath: '/poster.jpg',
+  firstAirDate: '2024-01-01',
+  name: 'TV Name',
+  voteAverage: 8.1,
+  voteCount: 120,
+  seasons: const [
+    Season(
+      airDate: '2024-01-01',
+      episodeCount: 8,
+      id: 101,
+      name: 'Season 1',
+      overview: 'Season overview',
+      posterPath: '/season.jpg',
+      seasonNumber: 1,
+    )
+  ],
+  numberOfEpisodes: 8,
+  numberOfSeasons: 1,
+);
+
+final testWatchlistTvSeries = TvSeries.watchlist(
+  id: 100,
+  name: 'TV Name',
+  posterPath: '/poster.jpg',
+  overview: 'TV overview',
+);
+
+final testTvSeriesTable = TvSeriesTable(
+  id: 100,
+  name: 'TV Name',
+  posterPath: '/poster.jpg',
+  overview: 'TV overview',
+);
+
+final testTvSeriesMap = {
+  'id': 100,
+  'overview': 'TV overview',
+  'posterPath': '/poster.jpg',
+  'name': 'TV Name',
 };

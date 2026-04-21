@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/path.jpg",
+      "genre_ids": [18],
+      "id": 100,
+      "original_name": "Original TV Name",
+      "overview": "TV overview",
+      "popularity": 55.1,
+      "poster_path": "/poster.jpg",
+      "first_air_date": "2024-01-01",
+      "name": "TV Name",
+      "vote_average": 8.1,
+      "vote_count": 120
+    }
+  ]
+}
