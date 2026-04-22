@@ -27,35 +27,35 @@ import 'package:ditonton/domain/usecases/get_watchlist_tv_series_status.dart';
 import 'package:ditonton/domain/usecases/save_watchlist_tv_series.dart';
 import 'package:ditonton/domain/usecases/remove_watchlist_tv_series.dart';
 import 'package:ditonton/domain/usecases/get_watchlist_tv_series.dart';
-import 'package:ditonton/presentation/provider/movie_detail_notifier.dart';
-import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
-import 'package:ditonton/presentation/provider/movie_search_notifier.dart';
-import 'package:ditonton/presentation/provider/popular_movies_notifier.dart';
-import 'package:ditonton/presentation/provider/top_rated_movies_notifier.dart';
-import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
-import 'package:ditonton/presentation/provider/on_the_air_tv_series_notifier.dart';
-import 'package:ditonton/presentation/provider/popular_tv_series_notifier.dart';
-import 'package:ditonton/presentation/provider/top_rated_tv_series_notifier.dart';
-import 'package:ditonton/presentation/provider/tv_series_detail_notifier.dart';
-import 'package:ditonton/presentation/provider/tv_series_list_notifier.dart';
-import 'package:ditonton/presentation/provider/tv_series_search_notifier.dart';
-import 'package:ditonton/presentation/provider/watchlist_tv_series_notifier.dart';
+import 'package:ditonton/presentation/bloc/movie_detail_cubit.dart';
+import 'package:ditonton/presentation/bloc/movie_list_cubit.dart';
+import 'package:ditonton/presentation/bloc/movie_search_cubit.dart';
+import 'package:ditonton/presentation/bloc/on_the_air_tv_series_cubit.dart';
+import 'package:ditonton/presentation/bloc/popular_movies_cubit.dart';
+import 'package:ditonton/presentation/bloc/popular_tv_series_cubit.dart';
+import 'package:ditonton/presentation/bloc/top_rated_movies_cubit.dart';
+import 'package:ditonton/presentation/bloc/top_rated_tv_series_cubit.dart';
+import 'package:ditonton/presentation/bloc/tv_series_detail_cubit.dart';
+import 'package:ditonton/presentation/bloc/tv_series_list_cubit.dart';
+import 'package:ditonton/presentation/bloc/tv_series_search_cubit.dart';
+import 'package:ditonton/presentation/bloc/watchlist_movie_cubit.dart';
+import 'package:ditonton/presentation/bloc/watchlist_tv_series_cubit.dart';
 import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;
 
 void init() {
-  // provider
+  // cubit
   locator.registerFactory(
-    () => MovieListNotifier(
+    () => MovieListCubit(
       getNowPlayingMovies: locator(),
       getPopularMovies: locator(),
       getTopRatedMovies: locator(),
     ),
   );
   locator.registerFactory(
-    () => MovieDetailNotifier(
+    () => MovieDetailCubit(
       getMovieDetail: locator(),
       getMovieRecommendations: locator(),
       getWatchListStatus: locator(),
@@ -64,49 +64,49 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => MovieSearchNotifier(
+    () => MovieSearchCubit(
       searchMovies: locator(),
     ),
   );
   locator.registerFactory(
-    () => PopularMoviesNotifier(
+    () => PopularMoviesCubit(
       locator(),
     ),
   );
   locator.registerFactory(
-    () => TopRatedMoviesNotifier(
+    () => TopRatedMoviesCubit(
       getTopRatedMovies: locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistMovieNotifier(
+    () => WatchlistMovieCubit(
       getWatchlistMovies: locator(),
     ),
   );
   locator.registerFactory(
-    () => TvSeriesListNotifier(
+    () => TvSeriesListCubit(
       getOnTheAirTvSeries: locator(),
       getPopularTvSeries: locator(),
       getTopRatedTvSeries: locator(),
     ),
   );
   locator.registerFactory(
-    () => OnTheAirTvSeriesNotifier(
+    () => OnTheAirTvSeriesCubit(
       locator(),
     ),
   );
   locator.registerFactory(
-    () => PopularTvSeriesNotifier(
+    () => PopularTvSeriesCubit(
       locator(),
     ),
   );
   locator.registerFactory(
-    () => TopRatedTvSeriesNotifier(
+    () => TopRatedTvSeriesCubit(
       getTopRatedTvSeries: locator(),
     ),
   );
   locator.registerFactory(
-    () => TvSeriesDetailNotifier(
+    () => TvSeriesDetailCubit(
       getTvSeriesDetail: locator(),
       getTvSeriesRecommendations: locator(),
       getWatchlistTvSeriesStatus: locator(),
@@ -115,12 +115,12 @@ void init() {
     ),
   );
   locator.registerFactory(
-    () => TvSeriesSearchNotifier(
+    () => TvSeriesSearchCubit(
       searchTvSeries: locator(),
     ),
   );
   locator.registerFactory(
-    () => WatchlistTvSeriesNotifier(
+    () => WatchlistTvSeriesCubit(
       getWatchlistTvSeries: locator(),
     ),
   );
