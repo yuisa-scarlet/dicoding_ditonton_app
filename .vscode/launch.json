@@ -9,7 +9,7 @@
             "request": "launch",
             "type": "dart",
             "toolArgs": [
-                "--dart-define=TMDB_API_KEY=PUT_YOUR_TMDB_API_KEY_HERE"
+                "--dart-define=TMDB_API_KEY=<YOUR_TMDB_API_KEY>"
             ]
         },
         {
@@ -18,7 +18,7 @@
             "type": "dart",
             "flutterMode": "profile",
             "toolArgs": [
-                "--dart-define=TMDB_API_KEY=PUT_YOUR_TMDB_API_KEY_HERE"
+                "--dart-define=TMDB_API_KEY=<YOUR_TMDB_API_KEY>"
             ]
         },
         {
@@ -27,7 +27,7 @@
             "type": "dart",
             "flutterMode": "release",
             "toolArgs": [
-                "--dart-define=TMDB_API_KEY=PUT_YOUR_TMDB_API_KEY_HERE"
+                "--dart-define=TMDB_API_KEY=<YOUR_TMDB_API_KEY>"
             ]
         }
     ]

@@ -9,6 +9,7 @@ import 'package:ditonton/presentation/pages/tv_series_detail_page.dart';
 import 'package:ditonton/presentation/pages/tv_series_search_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_tv_series_page.dart';
 import 'package:ditonton/presentation/bloc/tv_series_list_cubit.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -69,6 +70,12 @@ class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
                 Navigator.pushNamed(context, WatchlistTvSeriesPage.routeName);
               },
             ),
+            ListTile(
+              title: const Text('Crash Test'),
+              onTap: () {
+                FirebaseCrashlytics.instance.crash();
+              },
+            )
           ],
         ),
       ),
